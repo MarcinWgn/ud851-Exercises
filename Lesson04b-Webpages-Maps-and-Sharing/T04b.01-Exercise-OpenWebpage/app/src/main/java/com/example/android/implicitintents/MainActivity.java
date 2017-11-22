@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void onClickOpenWebpageButton(View v) {
         // TODO (5) Create a String that contains a URL ( make sure it starts with http:// or https:// )
-        String url = "http://www.o2.pl";
+        String url = "https://www.udacity.com/";
         openWebPage(url);
         // TODO (6) Replace the Toast with a call to openWebPage, passing in the URL String from the previous step
 //        Toast.makeText(this, "TODO: Open a web page when this button is clicked", Toast.LENGTH_SHORT).show();
