@@ -149,14 +149,11 @@ public class MainActivity extends AppCompatActivity {
         String mimeType = "text/plain";
         String title = "How to Share";
 
-        Intent intent = ShareCompat.IntentBuilder.from(this)
+        ShareCompat.IntentBuilder.from(this)
                 .setChooserTitle(title)
                 .setType(mimeType)
                 .setText(s)
-                .getIntent();
-        if (intent.resolveActivity(getPackageManager()) != null) {
-            startActivity(intent);
-        }
+                .startChooser();
 
     }
     // Do steps 2 - 4 within the shareText method
