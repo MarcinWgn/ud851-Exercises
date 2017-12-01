@@ -60,9 +60,12 @@ public class SettingsFragment extends PreferenceFragmentCompat implements OnShar
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
 
         Preference preference = findPreference(key);
-        if(null != preference && !(preference instanceof CheckBoxPreference)){
-            String value = sharedPreferences.getString(preference.getKey(),"");
-            setPreferenceSummary(preference,value);
+        if(null != preference){
+
+            if(!(preference instanceof CheckBoxPreference)){
+                String value = sharedPreferences.getString(preference.getKey(),"");
+                setPreferenceSummary(preference,value);
+            }
         }
 
     }
