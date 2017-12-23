@@ -162,7 +162,7 @@ public class TaskContentProvider extends ContentProvider {
 
         int match = sUriMatcher.match(uri);
 
-        int taskDeleted;
+        int taskDeleted =0;
 
         // COMPLETE (2) Write the code to delete a single row of data
         // [Hint] Use selections to delete an item by its row ID
@@ -177,6 +177,7 @@ public class TaskContentProvider extends ContentProvider {
 
                 default:
                     throw new UnsupportedOperationException("Unknown uri: " + uri);
+
         }
 
 
@@ -185,9 +186,11 @@ public class TaskContentProvider extends ContentProvider {
 
         if (taskDeleted != 0){
             getContext().getContentResolver().notifyChange(uri,null);
+            return taskDeleted;
+        }else {
+            throw new UnsupportedOperationException("Not yet implemented");
         }
-
-        throw new UnsupportedOperationException("Not yet implemented");
+        
     }
 
 
